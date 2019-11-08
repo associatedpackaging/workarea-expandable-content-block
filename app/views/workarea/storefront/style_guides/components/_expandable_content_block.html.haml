@@ -1,0 +1,19 @@
+#expandable-content-block.style-guide__subsection
+
+  %h3= link_to_style_guide('components', 'expandable_content_block')
+
+  %p A simple single accordion-style content block with one heading/body section. Useful for FAQ style pages.
+
+  %p Should display an accordion-style heading which toggles the body to open on click
+  .style-guide__example-block
+    .expandable-content-block{ data: { expandable_content_block: '' } }
+      %button.expandable-content-block__heading{ type: 'button' } Expandable Heading
+      .expandable-content-block__body
+        Expandable body text, this is wysiwyg content so admin users have access to text styles
+
+  %p Can be default to open
+  .style-guide__example-block
+    .expandable-content-block.expandable-content-block--open{ data: { expandable_content_block: '' } }
+      %button.expandable-content-block__heading{ type: 'button' } Expandable Heading
+      .expandable-content-block__body
+        Expandable body text, this is wysiwyg content so admin users have access to text styles

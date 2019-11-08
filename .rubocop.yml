@@ -1,0 +1,8 @@
+inherit_from: .rails-rubocop.yml
+
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - 'test/dummy/**/*'
+    - 'lib/expandable_content_block.rb'
+    - 'lib/expandable_content_block/**/*'

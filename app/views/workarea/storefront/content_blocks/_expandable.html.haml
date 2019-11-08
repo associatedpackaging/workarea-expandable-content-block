@@ -1,0 +1,3 @@
+.expandable-content-block{ class: ('expandable-content-block--open' if default_open), data: { expandable_content_block: '' } }
+  %button.expandable-content-block__heading{ type: 'button', id: view_model.heading_id, aria: { expanded: default_open.to_s, controls: view_model.body_id } }= heading
+  .expandable-content-block__body{ id: view_model.body_id, aria: { labelled_by: view_model.heading_id } }!= body

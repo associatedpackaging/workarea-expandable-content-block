@@ -1,0 +1,61 @@
+/*------------------------------------*\
+    #EXPANDABLE-CONTENT-BLOCK
+\*------------------------------------*/
+
+$expandable-content-block-padding: $spacing-unit ($spacing-unit * 2) !default;
+
+$expandable-content-block-heading-bg-color: $light-gray !default;
+$expandable-content-block-open-heading-bg-color: $light-gray !default;
+
+$expandable-content-block-body-max-height: 1000px !default;
+$expandable-content-block-body-transition: 0.2s ease-in !default;
+$expandable-content-block-body-border: 1px solid $transparent !default;
+$expandable-content-block-open-body-border-color: $light-gray !default;
+
+
+.expandable-content-block {}
+.expandable-content-block--open {}
+
+    .expandable-content-block__heading {
+        @extend %button-reset;
+        @extend %heading;
+        @extend %heading--3;
+        display: block;
+        margin-bottom: 0;
+        padding: $expandable-content-block-padding;
+        width: 100%;
+        text-align: left;
+        background-color: $expandable-content-block-heading-bg-color;
+
+        .expandable-content-block--open & {
+            background-color: $expandable-content-block-open-heading-bg-color;
+        }
+
+        &::after {
+            float: right;
+            content: '+';
+
+            .expandable-content-block--open & {
+                content: '-';
+            }
+        }
+
+    }
+
+    .expandable-content-block__body {
+        max-height: 0;
+        border: $expandable-content-block-body-border;
+        overflow: hidden;
+
+        .expandable-content-block--open & {
+            padding: $expandable-content-block-padding;
+            max-height: $expandable-content-block-body-max-height;
+            border-color: $expandable-content-block-open-body-border-color;
+            transition: max-height $expandable-content-block-body-transition;
+        }
+
+        .expandable-content-block--closing & {
+            max-height: 0;
+            overflow: hidden;
+        }
+    }
