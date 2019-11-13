@@ -29,4 +29,4 @@ See [https://developer.workarea.com](https://developer.workarea.com) for Workare
 License
 --------------------------------------------------------------------------------
 
-Workarea Email Signup Popup is released under the [Business Software License](LICENSE)
+Workarea Expandable Content Block is released under the [Business Software License](LICENSE)
